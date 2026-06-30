@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyanex — Travel Booking Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">&#9992;</div>
+        <span>Voyanex</span>
+      </a> 
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#">Vehicles</a>
+        <a href="#">Routes</a>
+        <a href="#">Reviews</a>
+        <a href="#" class="btn btn-orange">Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</button>
+    </div>
+  </header>
+
+
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="badge">Premium Travel Experience</span>
+      <h1>Your journey, <br /><span class="gold-text">perfected.</span></h1>
+      <p>Experience unparalleled comfort and reliability with Voyanex. From luxury airport transfers to group tours, we define modern travel.</p>
+      <div class="hero-buttons">
+        <a href="#book" class="btn btn-orange btn-lg">Book Now &rarr;</a>
+        <a href="#vehicles" class="btn btn-outline btn-lg">Explore Fleet</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section bg-light" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive transport solutions tailored for every occasion.</p>
+      </div>
+      <div class="grid grid-4" id="servicesGrid">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="vehicles">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Fleet</h2>
+        <p>Discover our most popular premium vehicles available for booking.</p>
+      </div>
+      <div class="grid grid-3" id="vehiclesGrid">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="15482">0</div>
+          <div class="stat-label">Bookings Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-label">Vehicles in Fleet</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="120">0</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="48">0</div>
+          <div class="stat-label">Average Rating (x10)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section bg-light" id="routes">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Routes</h2>
+        <p>Most frequently travelled routes with instant booking.</p>
+      </div>
+      <div class="grid grid-3" id="routesGrid">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="book">
+    <div class="container">
+      <div class="section-header">
+        <h2>Book Your Journey</h2>
+        <p>Fill in the details below to get started.</p>
+      </div>
+      <div class="booking-card">
+        <!-- Step Indicators -->
+        <div class="steps" id="steps">
+          <div class="step active" id="step1-indicator">1</div>
+          <div class="step-line"></div>
+          <div class="step" id="step2-indicator">2</div>
+          <div class="step-line"></div>
+          <div class="step" id="step3-indicator">3</div>
+        </div>
+
+        <!-- Step 1: Trip Details -->
+        <div class="step-content" id="step1">
+          <h3>Step 1 — Trip Details</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Service Type</label>
+              <select id="serviceType">
+                <option value="">Select Service</option>
+                <option value="cab">Cab Booking</option>
+                <option value="bus">Bus Booking</option>
+                <option value="wedding">Wedding Vehicle</option>
+                <option value="corporate">Corporate Transport</option>
+                <option value="airport">Airport Transfer</option>
+                <option value="outstation">Outstation</option>
+                <option value="hourly">Hourly Rental</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Passengers</label>
+              <select id="passengers">
+                <option value="1">1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="4">4 Passengers</option>
+                <option value="6">6 Passengers</option>
+                <option value="10">10 Passengers</option>
+                <option value="20">20 Passengers</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>&#128205; Pickup Location</label>
+              <input type="text" id="pickup" placeholder="Enter pickup address" />
+            </div>
+            <div class="form-group">
+              <label>&#128205; Drop Location</label>
+              <input type="text" id="drop" placeholder="Enter destination" />
+            </div>
+            <div class="form-group">
+              <label>&#128197; Date</label>
+              <input type="date" id="date" />
+            </div>
+            <div class="form-group">
+              <label>&#128336; Time</label>
+              <input type="time" id="time" />
+            </div>
+          </div>
+          <div class="form-actions right">
+            <button class="btn btn-blue" onclick="goToStep(2)">Continue &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Select Vehicle -->
+        <div class="step-content hidden" id="step2">
+          <h3>Step 2 — Select Vehicle</h3>
+          <div class="vehicles-select-grid" id="vehicleSelectGrid">
+            <!-- Filled by JS -->
+          </div>
+          <div class="form-actions space-between">
+            <button class="btn btn-outline" onclick="goToStep(1)">&larr; Back</button>
+            <button class="btn btn-blue" onclick="goToStep(3)">Get Fare Estimate &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Confirm Booking -->
+        <div class="step-content hidden" id="step3">
+          <h3>Step 3 — Confirm Booking</h3>
+          <div class="fare-summary" id="fareSummary">
+            <!-- Filled by JS -->
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="custName" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="custPhone" placeholder="Your phone number" />
+            </div>
+            <div class="form-group full">
+              <label>Email Address</label>
+              <input type="email" id="custEmail" placeholder="Your email address" />
+            </div>
+          </div>
+          <div class="form-actions space-between">
+            <button class="btn btn-outline" onclick="goToStep(2)">&larr; Back</button>
+            <button class="btn btn-orange" onclick="confirmBooking()">&#128179; Confirm &amp; Pay</button>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="step-content hidden" id="stepSuccess">
+          <div class="success-box">
+            <div class="success-icon">&#10003;</div>
+            <h3>Booking Confirmed!</h3>
+            <p>Your journey has been scheduled. Booking reference: <strong id="bookingRef"></strong></p>
+            <button class="btn btn-blue" onclick="resetForm()">Book Another Journey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="section bg-light" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <h2>Customer Reviews</h2>
+        <p>What our distinguished clients say about Voyanex.</p>
+      </div>
+      <div class="grid grid-3" id="reviewsGrid">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Voyanex?</h2>
+        <p>We go beyond just getting you there.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="why-card">
+          <div class="why-icon">&#128663;</div>
+          <h4>Premium Vehicles</h4>
+          <p>Handpicked, well-maintained fleet of luxury and economy vehicles.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#128373;</div>
+          <h4>Verified Drivers</h4>
+          <p>All drivers are background-verified with years of professional experience.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#9201;</div>
+          <h4>On-Time Guarantee</h4>
+          <p>Punctuality is our promise. We track every journey in real-time.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#128176;</div>
+          <h4>Transparent Pricing</h4>
+          <p>No hidden charges. Full fare breakdown before you confirm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">&#9992;</div>
+          <span>Voyanex</span>
+        </div>
+        <p>Experience premium travel across all modes of transport. Confident, polished, and trustworthy.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#vehicles">Our Fleet</a></li>
+          <li><a href="#routes">Popular Routes</a></li>
+          <li><a href="#book">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Manage Bookings</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li>support@voyanex.com</li>
+          <li>7428043238</li>
+          <li>Greater Noida</li>
+          <li>Uttar Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Voyanex. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
